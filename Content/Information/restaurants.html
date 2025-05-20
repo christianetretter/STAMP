@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header-placeholder"></head>
+<script>
+    fetch('../../Components/header.html')
+    .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+    })
+    .then(html => {
+                // Ersetze den Platzhalter durch den geladenen Header
+                document.getElementById('header-placeholder').outerHTML = html;
+    })
+</script>
+<body>
+    <!-- Hero Section -->
+    <nav id="hero-placeholder"></nav>
+    <script>
+        fetch('../../Components/hero.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('hero-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Navigation -->
+    <nav id="nav-placeholder"></nav>
+    <script>
+        fetch('../../Components/navigation.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('nav-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="welcome-section">
+                <h2>Restaurant Recommendations</h2>
+                <p>Hopefully you are all looking forward to the conference dinner at Restaurant Rosengarten on Wednesday. Until then you are probably wondering where might be a good place to eat in Bern. Here are our recommendations, which might be more locally sourced than the broad tourist information.</p>
+            </section>
+
+            <div class="restaurant-container">
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="../../Images/restaurant_rosengarten.jpg" alt="Restaurant Rosengarten">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Restaurant Rosengarten</h3>
+                        <p class="restaurant-description">
+                            Located in the beautiful Rosengarten park, this restaurant offers a stunning view over the city of Bern. 
+                            Enjoy traditional Swiss cuisine with a modern twist in an elegant atmosphere.
+                        </p>
+                        <div class="restaurant-details">
+                            <p><strong>Address:</strong> Alter Aargauerstalden 31B, 3006 Bern</p>
+                            <p><strong>Cuisine:</strong> Swiss, International</p>
+                        </div>
+                        <a href="https://www.rosengarten.be" target="_blank" class="restaurant-link">Visit Website</a>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-info">
+                        <h3>Restaurant Rosengarten</h3>
+                        <p class="restaurant-description">
+                            Located in the beautiful Rosengarten park, this restaurant offers a stunning view over the city of Bern. 
+                            Enjoy traditional Swiss cuisine with a modern twist in an elegant atmosphere.
+                        </p>
+                        <div class="restaurant-details">
+                            <p><strong>Address:</strong> Alter Aargauerstalden 31B, 3006 Bern</p>
+                            <p><strong>Cuisine:</strong> Swiss, International</p>
+                        </div>
+                        <a href="https://www.rosengarten.be" target="_blank" class="restaurant-link">Visit Website</a>
+                    </div>
+                    <div class="restaurant-image">
+                        <img src="../../Images/restaurant_rosengarten.jpg" alt="Restaurant Rosengarten">
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="../../Images/restaurant_rosengarten.jpg" alt="Restaurant Rosengarten">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Restaurant Rosengarten</h3>
+                        <p class="restaurant-description">
+                            Located in the beautiful Rosengarten park, this restaurant offers a stunning view over the city of Bern. 
+                            Enjoy traditional Swiss cuisine with a modern twist in an elegant atmosphere.
+                        </p>
+                        <div class="restaurant-details">
+                            <p><strong>Address:</strong> Alter Aargauerstalden 31B, 3006 Bern</p>
+                            <p><strong>Cuisine:</strong> Swiss, International</p>
+                        </div>
+                        <a href="https://www.rosengarten.be" target="_blank" class="restaurant-link">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <script>
+        fetch('../../Components/footer.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('footer-placeholder').outerHTML = html;
+        })
+    </script>
+</body>
+</html>

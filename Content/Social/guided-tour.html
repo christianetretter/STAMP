@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header-placeholder"></head>
+<meta charset="UTF-8">
+<script>
+    fetch('../../Components/header.html')
+    .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+    })
+    .then(html => {
+                // Ersetze den Platzhalter durch den geladenen Header
+                document.getElementById('header-placeholder').outerHTML = html;
+    })
+</script>
+<body>
+    <!-- Hero Section -->
+    <nav id="hero-placeholder"></nav>
+    <script>
+        fetch('../../Components/hero.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('hero-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Navigation -->
+    <nav id="nav-placeholder"></nav>
+    <script>
+        fetch('../../Components/navigation.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('nav-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="welcome-section">
+                <h2>Guided Tour of Bern</h2>
+                <p>The guided tour of Bern will take place on <span class="highlight">Tuesday</span> from <span class="highlight">18:00</span> to <span class="highlight">19:30</span>. Check the conference <a href="../../Content/programme.html">timetable</a> for reference.</p>
+                <p>Our very own ?? is going to show you around the city center of Bern. Some of the many attractions we are going to visit are the Zytglogge, the Berner Münster with its beautiful view over the city and the Bärenplatz housing three reallife bears. </p>
+            </section>
+
+            <div class="restaurant-container">
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="../../Images/city-tour.jpg" alt="Bern Old Town">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Guided Tour of Bern</h3>
+                        <p class="restaurant-description">
+                            Experience the charm of Bern's UNESCO World Heritage Old Town with our guided tour. 
+                            Discover the medieval architecture, historic fountains, and learn about the city's rich history 
+                            while visiting iconic landmarks like the Zytglogge clock tower and the Berner Münster cathedral.
+                        </p>
+                        <div class="restaurant-details">
+                            <p><strong>Meeting Point:</strong> TBA</p>
+                            <p><strong>Duration:</strong> TBA</p>
+                            <p><strong>Highlights:</strong> Zytglogge, Berner Münster, Bärenplatz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Please make sure to be there on time. We hope to see as many of you as possible there!</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <script>
+        fetch('../../Components/footer.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('footer-placeholder').outerHTML = html;
+        })
+    </script>
+</body>
+</html>

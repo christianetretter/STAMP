@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header-placeholder"></head>
+<script>
+    fetch('../../Components/header.html')
+    .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+    })
+    .then(html => {
+                // Ersetze den Platzhalter durch den geladenen Header
+                document.getElementById('header-placeholder').outerHTML = html;
+    })
+</script>
+<body>
+    <!-- Hero Section -->
+    <nav id="hero-placeholder"></nav>
+    <script>
+        fetch('../../Components/hero.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('hero-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Navigation -->
+    <nav id="nav-placeholder"></nav>
+    <script>
+        fetch('../../Components/navigation.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('nav-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="welcome-section">
+                <h2>Activity Signup</h2>
+                <p>We are happy to announce that besides the many talks and scientific programme for the STAMP conference we also have a social programme planned. </p>
+                <p>This includes a personally lead <span class="highlight">city tour</span> of Bern on <span class="highlight">Tuesday evening</span>, a visit to the <span class="highlight">Einsteinhaus</span> on <span class="highlight">Wednesday morning</span> and the <span class="highlight">conference dinner</span> at Restaurant Rosengarten on <span class="highlight">Wednesday evening</span>. Check the conference <a href="../../Content/programme.html">timetable</a> for more details.</p>
+                <p>In order to make our planning easier we ask you to fill out the <span class="highlight">Activity Signup</span> form below. This will help us to know how many people will attend the different activities and to make any dietary needs are considered.</p>
+            </section>
+
+            <div class="survey-container">
+                <div class="survey-card">
+                    <div class="survey-info">
+                        <h3>Activity Signup Form</h3>
+                        <p class="survey-description">
+                            Please click the button below to access our signup form. The form will ask you about your attendance at the social events and any dietary restrictions.
+                        </p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDYM5lEYGja9RgPUehQ_i6GF1MeeQr5AiSj2ZUZQn7m5evAQ/viewform?usp=dialog" target="_blank" class="survey-link">Fill out the form</a>
+                    </div>
+                    <div class="survey-images">
+                        <img src="../../Images/restaurant_rosengarten.jpg" alt="Restaurant Rosengarten">
+                        <img src="../../Images/city-tour.jpg" alt="City Tour">
+                    </div>
+                </div>
+            </div>
+            <p>Thank you for submitting your answers! We are looking forward to seeing as many of you as possible at the different activities.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <script>
+        fetch('../../Components/footer.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('footer-placeholder').outerHTML = html;
+        })
+    </script>
+</body>
+</html>
