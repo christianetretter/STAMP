@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header-placeholder"></head>
+<script>
+    fetch('../Components/header.html')
+    .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+    })
+    .then(html => {
+                // Ersetze den Platzhalter durch den geladenen Header
+                document.getElementById('header-placeholder').outerHTML = html;
+    })
+</script>
+<body>
+    <!-- Hero Section -->
+    <nav id="hero-placeholder"></nav>
+    <script>
+        fetch('../Components/hero.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('hero-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Navigation -->
+    <nav id="nav-placeholder"></nav>
+    <script>
+        fetch('../Components/navigation.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('nav-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Main Content -->
+    <main class="main-content">
+    <div class="container">
+        <section class="welcome-section">
+            <h2 style="text-align: left; margin-top: -20px;">Downloads</h2>
+            <p style="text-align: left;">Here you can find the downloads for all documents related to the conference.</p>
+        </section>
+
+        <div class="downloads-container">
+            <div class="download-card">
+                <div class="download-info">
+                    <h3>Book of Abstracts</h3>
+                    <span class="download-description">Complete collection of all the talks abstracts.</span>
+                </div>
+                <a href="../Downloads/abstracts.pdf" class="download-link">
+                    <img src="../Images/download.png" alt="Download" class="download-icon">
+                </a>
+            </div>
+            <div class="download-card">
+                <div class="download-info">
+                    <h3>Libero Zone Plan</h3>
+                    <span class="download-description">Map of the public transport zones in Bern.</span>
+                </div>
+                <a href="../Downloads/bern-zones.pdf" class="download-link">
+                    <img src="../Images/download.png" alt="Download" class="download-icon">
+                </a>
+            </div>
+            <div class="download-card">
+                <div class="download-info">
+                    <h3>ExWi Map</h3>
+                    <span class="download-description">Map to help you find your way to the conference venue.</span>
+                </div>
+                <a href="../Downloads/ExWi_Plan.pdf" class="download-link">
+                    <img src="../Images/download.png" alt="Download" class="download-icon">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <script>
+        fetch('../Components/footer.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('footer-placeholder').outerHTML = html;
+        })
+    </script>
+</body>
+</html>
+

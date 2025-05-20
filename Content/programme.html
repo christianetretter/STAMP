@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header-placeholder"></head>
+<meta charset="UTF-8">
+<script>
+    fetch('../Components/header.html')
+    .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+    })
+    .then(html => {
+                // Ersetze den Platzhalter durch den geladenen Header
+                document.getElementById('header-placeholder').outerHTML = html;
+    })
+</script>
+<body>
+    <!-- Hero Section -->
+    <nav id="hero-placeholder"></nav>
+    <script>
+        fetch('../Components/hero.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('hero-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Navigation -->
+    <nav id="nav-placeholder"></nav>
+    <script>
+        fetch('../Components/navigation.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('nav-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Main Content -->
+    <main class="main-content">
+    <div class="container">
+        <section class="welcome-section">
+            <h2 style="text-align: left; margin-top: -20px;">Conference Timetable</h2>
+            <p style="text-align: left;">Here you can find the timetable for the conference.</p>
+        </section>
+
+        <div class="timetable-grid">
+            <!-- Monday -->
+            <div class="day">
+                <h2>Monday, June 2, 2025</h2>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">13:00-14:00</span>
+                        <span class="detail">Registration</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">14:00-14:15</span>
+                        <span class="detail">Opening</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">14:15-14:45</span>
+                        <span class="detail">Talk Pavel Kurasov</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">14:50-15:20</span>
+                        <span class="detail">Talk Peter Semrl</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">15:25-15:55</span>
+                        <span class="detail">Talk Frantisek Stampach</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">16:00-16:30</span>
+                        <span class="detail">Coffee Break</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">16:30-17:00</span>
+                        <span class="detail">Talk Borbala Gerhat</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">17:05-17:35</span>
+                        <span class="detail">Talk Petr Siegl</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">17:40-18:10</span>
+                        <span class="detail">Talk Jean-Claude Cuenin</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">18:30</span>
+                        <span class="detail">Apero riche</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tuesday -->
+            <div class="day">
+                <h2>Tuesday, June 3, 2025</h2>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">09:00-09:30</span>
+                        <span class="detail">Talk Christian Engstrom</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">09:35-10:05</span>
+                        <span class="detail">Talk Francesco Ferraresso</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">10:10-10:40</span>
+                        <span class="detail">Talk Joachim Escher</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">10:45-11:15</span>
+                        <span class="detail">Coffee Break</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">11:15-11:45</span>
+                        <span class="detail">Talk Kaori Nagatou</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">11:50-12:20</span>
+                        <span class="detail">Talk Michael Plum</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">12:25-12:55</span>
+                        <span class="detail">Talk Margarita Kraus</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">13:00-14:15</span>
+                        <span class="detail">Lunch Break</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">14:15-14:45</span>
+                        <span class="detail">Talk Jussi Behrndt</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">14:50-15:20</span>
+                        <span class="detail">Talk Matthias Langer</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">15:25-15:55</span>
+                        <span class="detail">Talk Yury Arlinskii</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">16:00-16:30</span>
+                        <span class="detail">Coffee Break</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">16:30-17:00</span>
+                        <span class="detail">Talk Harald Schmid</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">17:05-17:35</span>
+                        <span class="detail">Talk Elmar Schrohe</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">17:40-18:10</span>
+                        <span class="detail">Talk ? (or talk on 'Einstein and Bern')</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="day">
+                <h2>Wednesday, June 4, 2025</h2>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">08:30-09:45</span>
+                        <span class="detail">Visit to Einstein House / Zytglogge (possibly)</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">10:15-10:45</span>
+                        <span class="detail">Talk Birgit Jacob</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">10:50-11:20</span>
+                        <span class="detail">Talk Christian Wyss</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">11:25-11:55</span>
+                        <span class="detail">Coffee Break</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">11:55-12:25</span>
+                        <span class="detail">Talk Sabine Boegli</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">12:30-13:00</span>
+                        <span class="detail">Talk Nicolas Hefti</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">13:00-14:15</span>
+                        <span class="detail">Lunch Break</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">14:15-14:45</span>
+                        <span class="detail">Talk Thomas Wihler</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">14:50-15:20</span>
+                        <span class="detail">Talk Marco Marletta</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">15:25-15:55</span>
+                        <span class="detail">Talk Uwe Guenther</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">16:00-16:30</span>
+                        <span class="detail">Coffee Break</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">16:30-17:00</span>
+                        <span class="detail">Talk Frank Roesler</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">17:05-17:35</span>
+                        <span class="detail">Talk Carsten Trunk</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">17:40-18:10</span>
+                        <span class="detail">(time for 2-3 short speeches)</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">19:30</span>
+                        <span class="detail important">Conference Dinner (Restaurant Rosengarten)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thursday -->
+            <div class="day">
+                <h2>Thursday, June 5, 2025</h2>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">09:00-09:30</span>
+                        <span class="detail">Talk Matthias Hieber</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">09:35-10:05</span>
+                        <span class="detail">Talk Eva Gallardo</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">10:10-10:40</span>
+                        <span class="detail">Talk Manfred Moeller</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">10:45-11:15</span>
+                        <span class="detail">Coffee Break</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">11:15-11:45</span>
+                        <span class="detail">Talk Annemarie Luger</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">11:50-12:20</span>
+                        <span class="detail">Talk Martin Grothaus</span>
+                    </div>
+                    <div class="session">
+                        <span class="time">12:25-12:55</span>
+                        <span class="detail">Talk ?</span>
+                    </div>
+                </div>
+                <div class="session-group">
+                    <div class="session">
+                        <span class="time">13:00-13:15</span>
+                        <span class="detail">Closing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <script>
+        fetch('../Components/footer.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('footer-placeholder').outerHTML = html;
+        })
+    </script>
+</body>
+</html>
+

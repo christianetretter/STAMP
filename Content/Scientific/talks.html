@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header-placeholder"></head>
+<meta charset="UTF-8">
+<!-- MathJax -->
+<script>
+MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        packages: ['base', 'ams', 'noerrors', 'noundefined'],
+        macros: {
+            // Text formatting
+            textbf: ['$\\mathbf{#1}$', 1],
+            textit: ['$\\mathit{#1}$', 1],
+            textrm: ['$\\mathrm{#1}$', 1],
+            textsf: ['$\\mathsf{#1}$', 1],
+            texttt: ['$\\mathtt{#1}$', 1],
+            textnormal: ['$\\mathrm{#1}$', 1],
+            // Special characters
+            'u{i}': '\\u{\\i}',
+            'u{o}': '\\u{o}',
+            'u{u}': '\\u{u}',
+            'u{a}': '\\u{a}',
+            'u{e}': '\\u{e}',
+            'u{I}': '\\u{I}',
+            'u{O}': '\\u{O}',
+            'u{U}': '\\u{U}',
+            'u{A}': '\\u{A}',
+            'u{E}': '\\u{E}',
+            // Other special characters
+            '\\\'{e}': '\\acute{e}',
+            '\\\'{E}': '\\acute{E}',
+            '\\`{e}': '\\grave{e}',
+            '\\`{E}': '\\grave{E}',
+            '\\^{e}': '\\hat{e}',
+            '\\^{E}': '\\hat{E}',
+            '\\"{e}': '\\ddot{e}',
+            '\\"{E}': '\\ddot{E}',
+            '\\~{e}': '\\tilde{e}',
+            '\\~{E}': '\\tilde{E}',
+            '\\c{e}': '\\c{e}',
+            '\\c{E}': '\\c{E}',
+            '\\k{e}': '\\k{e}',
+            '\\k{E}': '\\k{E}',
+            '\\v{e}': '\\v{e}',
+            '\\v{E}': '\\v{E}',
+            '\\H{e}': '\\H{e}',
+            '\\H{E}': '\\H{E}',
+            '\\d{e}': '\\d{e}',
+            '\\d{E}': '\\d{E}',
+            '\\b{e}': '\\b{e}',
+            '\\b{E}': '\\b{E}',
+            '\\t{e}': '\\t{e}',
+            '\\t{E}': '\\t{E}',
+            '\\u{e}': '\\u{e}',
+            '\\u{E}': '\\u{E}',
+            '\\r{e}': '\\r{e}',
+            '\\r{E}': '\\r{E}',
+            '\\={e}': '\\bar{e}',
+            '\\={E}': '\\bar{E}',
+            '\\.{e}': '\\dot{e}',
+            '\\.{E}': '\\dot{E}',
+            '\\"{o}': '\\ddot{o}',
+            '\\"{u}': '\\ddot{u}',
+            '\\"{a}': '\\ddot{a}',
+            '\\"{O}': '\\ddot{O}',
+            '\\"{U}': '\\ddot{U}',
+            '\\"{A}': '\\ddot{A}',
+            '\\"{i}': '\\ddot{i}',
+            '\\"{I}': '\\ddot{I}',
+            '\\"{y}': '\\ddot{y}',
+            '\\"{Y}': '\\ddot{Y}',
+            '\\"{n}': '\\ddot{n}',
+            '\\"{N}': '\\ddot{N}',
+            '\\"{s}': '\\ddot{s}',
+            '\\"{S}': '\\ddot{S}',
+            '\\"{z}': '\\ddot{z}',
+            '\\"{Z}': '\\ddot{Z}',
+            '\\"{c}': '\\ddot{c}',
+            '\\"{C}': '\\ddot{C}',
+            '\\"{l}': '\\ddot{l}',
+            '\\"{L}': '\\ddot{L}',
+            '\\"{r}': '\\ddot{r}',
+            '\\"{R}': '\\ddot{R}',
+            '\\"{t}': '\\ddot{t}',
+            '\\"{T}': '\\ddot{T}',
+            '\\"{d}': '\\ddot{d}',
+            '\\"{D}': '\\ddot{D}',
+            '\\"{g}': '\\ddot{g}',
+            '\\"{G}': '\\ddot{G}',
+            '\\"{h}': '\\ddot{h}',
+            '\\"{H}': '\\ddot{H}',
+            '\\"{j}': '\\ddot{j}',
+            '\\"{J}': '\\ddot{J}',
+            '\\"{k}': '\\ddot{k}',
+            '\\"{K}': '\\ddot{K}',
+            '\\"{m}': '\\ddot{m}',
+            '\\"{M}': '\\ddot{M}',
+            '\\"{p}': '\\ddot{p}',
+            '\\"{P}': '\\ddot{P}',
+            '\\"{q}': '\\ddot{q}',
+            '\\"{Q}': '\\ddot{Q}',
+            '\\"{v}': '\\ddot{v}',
+            '\\"{V}': '\\ddot{V}',
+            '\\"{w}': '\\ddot{w}',
+            '\\"{W}': '\\ddot{W}',
+            '\\"{x}': '\\ddot{x}',
+            '\\"{X}': '\\ddot{X}',
+            '\\"{b}': '\\ddot{b}',
+            '\\"{B}': '\\ddot{B}',
+            '\\"{f}': '\\ddot{f}',
+            '\\"{F}': '\\ddot{F}'
+        }
+    },
+    options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        processHtmlClass: 'math-tex'
+    }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    fetch('../../Components/header.html')
+    .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+    })
+    .then(html => {
+                document.getElementById('header-placeholder').outerHTML = html;
+    })
+</script>
+<body>
+    <!-- Hero Section -->
+    <nav id="hero-placeholder"></nav>
+    <script>
+        fetch('../../Components/hero.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    document.getElementById('hero-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Navigation -->
+    <nav id="nav-placeholder"></nav>
+    <script>
+        fetch('../../Components/navigation.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    document.getElementById('nav-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="welcome-section">
+                <h2 style="text-align: left; margin-top: -20px;">Talks</h2>
+                <p style="text-align: left;">Listed below are all the talks given at the conference. Click the dropdown menu to view the abstract of the talk or download the book of abstracts <a href="../../Downloads/abstracts.pdf">here</a>.</p>
+            </section>
+
+            <div class="talks-container">
+                <!-- Talks will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <script>
+        fetch('../../Components/footer.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    document.getElementById('footer-placeholder').outerHTML = html;
+        })
+    </script>
+    <script src="../../Scripts/loadTalks.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header-placeholder"></head>
+<meta charset="UTF-8">
+<script>
+    fetch('../../Components/header.html')
+    .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+    })
+    .then(html => {
+                // Ersetze den Platzhalter durch den geladenen Header
+                document.getElementById('header-placeholder').outerHTML = html;
+    })
+</script>
+<body>
+    <!-- Hero Section -->
+    <nav id="hero-placeholder"></nav>
+    <script>
+        fetch('../../Components/hero.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('hero-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Navigation -->
+    <nav id="nav-placeholder"></nav>
+    <script>
+        fetch('../../Components/navigation.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('nav-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="welcome-section">
+                <h2>Information about Bern</h2>
+                <p>Here you can find some general information about Bern, the city where the STAMP conference will be held.</p>
+                <p>The city of Bern is the capital of Switzerland and its old town is a UNESCO World Heritage Site. We will explore a few sights of the city in our city tour on tuesday. But there is much more to see and even more to learn about Bern. On this page you might find some useful information and inspiration on what to do while you are staying in Bern. </p>
+                
+                <h4 class="feature-title" style="color: var(--primary); text-align: left; margin-top: var(--space-lg);">Weather</h4>
+                <p>Hopefully the weather will be nice and sunny during the conference, especially our city tour. In order to prepare yourself you can check the weather <a href="https://www.meteoschweiz.admin.ch/lokalprognose/bern/3012.html#forecast-tab=detail-view">here</a>. Alternatively, take a look yourself with the live webcam of the "Klima und Umweltphysik (KUP)" department of Uni Bern below. </p>
+                <a href="https://climatehomes.unibe.ch/public/webcam/higher.jpg" target="_blank">
+                    <img src="https://climatehomes.unibe.ch/public/webcam/higher.jpg" alt="Weather in Bern" style="max-width: 50%; height: auto; margin: 20px 0;">
+                </a>
+                
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <script>
+        fetch('../../Components/footer.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('footer-placeholder').outerHTML = html;
+        })
+    </script>
+</body>
+</html>

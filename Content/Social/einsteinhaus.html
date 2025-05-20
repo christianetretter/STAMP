@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header-placeholder"></head>
+<script>
+    fetch('../../Components/header.html')
+    .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+    })
+    .then(html => {
+                // Ersetze den Platzhalter durch den geladenen Header
+                document.getElementById('header-placeholder').outerHTML = html;
+    })
+</script>
+<body>
+    <!-- Hero Section -->
+    <nav id="hero-placeholder"></nav>
+    <script>
+        fetch('../../Components/hero.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('hero-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Navigation -->
+    <nav id="nav-placeholder"></nav>
+    <script>
+        fetch('../../Components/navigation.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('nav-placeholder').outerHTML = html;
+        })
+    </script>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="welcome-section">
+                <h2>Visit the Einsteinhaus</h2>
+                <p>The Einsteinhaus is a museum dedicated to the life and work of Albert Einstein. It is located in Bern, Switzerland, and is a popular destination for visitors interested in the history of science and technology.</p>
+                <p>The visit will take place on <span class="highlight">Wednesday</span> from <span class="highlight">8:30</span> to <span class="highlight">9:45</span>. Check the conference <a href="../../Content/programme.html">timetable</a> for more details.</p>
+            </section>
+
+            <div class="restaurant-container">
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="../../Images/einsteinhaus.jpg" alt="Einsteinhaus Museum">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Einsteinhaus Museum</h3>
+                        <p class="restaurant-description">
+                            The Einsteinhaus is where Albert Einstein lived from 1903 to 1905, during which time he developed his famous Theory of Relativity. 
+                            The apartment has been preserved in its original state and now serves as a museum showcasing Einstein's life and work in Bern.
+                        </p>
+                        <div class="restaurant-details">
+                            <p><strong>Address:</strong> Kramgasse 49, 3000 Bern</p>
+                            <p><strong>Opening Hours:</strong> Tuesday-Sunday, 10:00-17:00</p>
+                        </div>
+                        <a href="https://www.einstein-bern.ch" target="_blank" class="restaurant-link">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <p>We will meet at the <span class="highlight">Einsteinhaus</span> at <span class="highlight">8:30</span> on <span class="highlight">Wednesday</span>. Please make sure to be there on time. We hope to see as many of you as possible there!</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <script>
+        fetch('../../Components/footer.html')
+        .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text();
+        })
+        .then(html => {
+                    // Ersetze den Platzhalter durch den geladenen Header
+                    document.getElementById('footer-placeholder').outerHTML = html;
+        })
+    </script>
+</body>
+</html>
