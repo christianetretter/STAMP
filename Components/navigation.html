@@ -2,6 +2,11 @@
 <html lang="en">
 <nav class="main-nav">
     <div class="nav-container">
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="nav-list">
             <li><a href="../../index.html" class="active">Home</a></li>
             <li><a href="../../Content/programme.html">Programme</a></li>
@@ -35,4 +40,37 @@
         </ul>
     </div>
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        // Toggle main menu
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+
+        // Handle dropdowns
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('.dropdown-trigger');
+            const menu = dropdown.querySelector('.dropdown-menu');
+
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                menu.classList.toggle('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.main-nav')) {
+                menuToggle.classList.remove('active');
+                navList.classList.remove('active');
+            }
+        });
+    });
+</script>
 </html>

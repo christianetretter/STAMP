@@ -143,6 +143,28 @@ body {
     width: 1800px;
     margin: 0 auto;
     padding: 0 var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-xs);
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 5px 0;
+    transition: all 0.3s ease;
 }
 
 .nav-list {
@@ -596,50 +618,170 @@ body {
     transition: opacity 0.2s ease;
 }
 
-/* Responsive Design */
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
     body {
         width: 100%;
         margin: 0;
-        padding: 0 var(--space-sm);
+        padding: 0;
     }
 
-    .nav-list {
-        flex-direction: column;
+    .container {
+        padding: var(--space-sm);
+        width: 100%;
     }
 
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        padding-left: var(--space-md);
+    .welcome-section {
+        padding: var(--space-sm);
+    }
+
+    .welcome-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-section p {
+        font-size: 1rem;
+        text-align: left;
     }
 
     .feature-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .feature-card {
+        padding: var(--space-sm);
+    }
+
+    .committee-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .committee-card {
+        padding: var(--space-sm);
+    }
+
+    .hero-content {
+        padding: var(--space-sm);
+    }
+
+    .conference-title {
+        font-size: 2rem;
+    }
+
+    .conference-details {
+        font-size: 1rem;
+    }
+
+    .hero-logo {
+        width: 150px;
+        bottom: var(--space-sm);
+        right: var(--space-sm);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        padding: 60px var(--space-md) var(--space-md);
+        flex-direction: column;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        width: 100%;
+    }
+
+    .nav-list a,
+    .dropdown-trigger {
+        padding: var(--space-sm) 0;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding-left: var(--space-md);
+        display: none;
+    }
+
+    .dropdown-menu.active {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        padding: var(--space-xs) 0;
+        border-bottom: none;
+    }
+
+    /* Hamburger Animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .main-content {
+        padding: var(--space-md) 0;
     }
 
     .footer-content {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
-    }
-
-    .footer-logos {
-        flex-direction: row;
-        border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-left: 0;
-        padding-top: var(--space-md);
-        margin-top: var(--space-md);
-    }
-
-    .session {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+        text-align: center;
     }
 
-    .time {
-        min-width: auto;
+    .footer-section {
+        margin-bottom: var(--space-md);
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .welcome-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .conference-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-logo {
+        width: 120px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .committee-name {
+        font-size: 1rem;
+    }
+
+    .committee-role {
+        font-size: 0.9rem;
     }
 }
 
