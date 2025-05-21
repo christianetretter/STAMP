@@ -123,7 +123,7 @@ MathJax = {
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
-    fetch('../../Components/header.html')
+    fetch('../../../Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -136,7 +136,7 @@ MathJax = {
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('../../Components/hero.html')
+        fetch('../../../Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -149,7 +149,7 @@ MathJax = {
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('../../Components/navigation.html')
+        fetch('../../../Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -176,7 +176,7 @@ MathJax = {
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('../../Components/footer.html')
+        fetch('../../../Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -185,6 +185,6 @@ MathJax = {
                     document.getElementById('footer-placeholder').outerHTML = html;
         })
     </script>
-    <script src="../../Scripts/loadTalks.js"></script>
+    <script src="../../../Scripts/loadTalks.js"></script>
 </body>
 </html>
