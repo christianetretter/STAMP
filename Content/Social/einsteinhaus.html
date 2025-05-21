@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script src="../../Scripts/path-handler.js"></script> id="header-placeholder"></head>
+<head id="header-placeholder"></head>
 <script>
-    fetch('../../Components/header.html')
+    fetch('https://christianetretter.github.io/STAMP/Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -17,7 +16,7 @@
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('../../Components/hero.html')
+        fetch('https://christianetretter.github.io/STAMP/Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -31,7 +30,7 @@
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('../../Components/navigation.html')
+        fetch('https://christianetretter.github.io/STAMP/Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -54,7 +53,7 @@
             <div class="restaurant-container">
                 <div class="restaurant-card">
                     <div class="restaurant-image">
-                        <img src="../../Images/einsteinhaus.jpg" alt="Einsteinhaus Museum">
+                        <img src="https://christianetretter.github.io/STAMP/Images/einsteinhaus.jpg" alt="Einsteinhaus Museum">
                     </div>
                     <div class="restaurant-info">
                         <h3>Einsteinhaus Museum</h3>
@@ -77,7 +76,7 @@
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('../../Components/footer.html')
+        fetch('https://christianetretter.github.io/STAMP/Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();

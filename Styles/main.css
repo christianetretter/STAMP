@@ -51,7 +51,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    background: url('../../../Images/Bern.jpg') center/cover no-repeat;
+    background: url('https://christianetretter.github.io/STAMP/Images/Bern.jpg') center/cover no-repeat;
     color: white;
     padding: var(--space-xl) 0;
     overflow: hidden;
