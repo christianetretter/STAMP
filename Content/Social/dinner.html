@@ -8,7 +8,7 @@
     </style>
 </head>
 <script>
-    fetch('/Components/header.html')
+    fetch('Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -22,7 +22,7 @@
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('/Components/hero.html')
+        fetch('Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -36,7 +36,7 @@
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('/Components/navigation.html')
+        fetch('Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -59,7 +59,7 @@
             <div class="restaurant-container">
                 <div class="restaurant-card">
                     <div class="restaurant-image">
-                        <img src="/Images/restaurant_rosengarten.jpg" alt="Restaurant Rosengarten">
+                        <img src="Images/restaurant_rosengarten.jpg" alt="Restaurant Rosengarten">
                     </div>
                     <div class="restaurant-info">
                         <h3>Restaurant Rosengarten</h3>
@@ -82,7 +82,7 @@
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('/Components/footer.html')
+        fetch('Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();

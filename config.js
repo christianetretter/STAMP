@@ -1,8 +1,8 @@
 const config = {
     // Set this to empty string for local development
     //baseUrl: '',
-    // Set this to 'https://christianetretter.github.io/STAMP/' for production
-    baseUrl: 'https://christianetretter.github.io/STAMP/'
+    // Set this to '' for production
+    baseUrl: ''
 };
 
 export default config; 
