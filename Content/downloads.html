@@ -2,7 +2,7 @@
 <html lang="en">
 <head id="header-placeholder"></head>
 <script>
-    fetch('https://christianetretter.github.io/STAMP/Components/header.html')
+    fetch('/Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -16,7 +16,7 @@
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/hero.html')
+        fetch('/Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -30,7 +30,7 @@
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/navigation.html')
+        fetch('/Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -55,8 +55,8 @@
                     <h3>Book of Abstracts</h3>
                     <span class="download-description">Complete collection of all the talks abstracts.</span>
                 </div>
-                <a href="https://christianetretter.github.io/STAMP/Downloads/abstracts.pdf" class="download-link">
-                    <img src="https://christianetretter.github.io/STAMP/Images/download.png" alt="Download" class="download-icon">
+                <a href="/Downloads/abstracts.pdf" class="download-link">
+                    <img src="/Images/download.png" alt="Download" class="download-icon">
                 </a>
             </div>
             <div class="download-card">
@@ -64,8 +64,8 @@
                     <h3>Libero Zone Plan</h3>
                     <span class="download-description">Map of the public transport zones in Bern.</span>
                 </div>
-                <a href="https://christianetretter.github.io/STAMP/Downloads/bern-zones.pdf" class="download-link">
-                    <img src="https://christianetretter.github.io/STAMP/Images/download.png" alt="Download" class="download-icon">
+                <a href="/Downloads/bern-zones.pdf" class="download-link">
+                    <img src="/Images/download.png" alt="Download" class="download-icon">
                 </a>
             </div>
             <div class="download-card">
@@ -73,8 +73,8 @@
                     <h3>ExWi Map</h3>
                     <span class="download-description">Map to help you find your way to the conference venue.</span>
                 </div>
-                <a href="https://christianetretter.github.io/STAMP/Downloads/ExWi_Plan.pdf" class="download-link">
-                    <img src="https://christianetretter.github.io/STAMP/Images/download.png" alt="Download" class="download-icon">
+                <a href="/Downloads/ExWi_Plan.pdf" class="download-link">
+                    <img src="/Images/download.png" alt="Download" class="download-icon">
                 </a>
             </div>
         </div>
@@ -86,7 +86,7 @@
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/footer.html')
+        fetch('/Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();

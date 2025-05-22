@@ -3,7 +3,7 @@
 <head id="header-placeholder"></head>
 <meta charset="UTF-8">
 <script>
-    fetch('https://christianetretter.github.io/STAMP/Components/header.html')
+    fetch('/Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -17,7 +17,7 @@
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/hero.html')
+        fetch('/Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/navigation.html')
+        fetch('/Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -54,7 +54,7 @@
             <div class="restaurant-container">
                 <div class="restaurant-card">
                     <div class="restaurant-image">
-                        <img src="https://christianetretter.github.io/STAMP/Images/city-tour.jpg" alt="Bern Old Town">
+                        <img src="/Images/city-tour.jpg" alt="Bern Old Town">
                     </div>
                     <div class="restaurant-info">
                         <h3>Guided Tour of Bern</h3>
@@ -78,7 +78,7 @@
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/footer.html')
+        fetch('/Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();

@@ -3,7 +3,7 @@
 <head id="header-placeholder"></head>
 <meta charset="UTF-8">
 <script>
-    fetch('https://christianetretter.github.io/STAMP/Components/header.html')
+    fetch('/Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -17,7 +17,7 @@
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/hero.html')
+        fetch('/Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/navigation.html')
+        fetch('/Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -58,19 +58,19 @@
                     <div class="feature-card">
                         <h3>Programme</h3>
                         <!--<p>Explore the conference schedule.</p>-->
-                        <a href="https://christianetretter.github.io/STAMP/Content/programme.html" class="btn">View Programme</a>
+                        <a href="/Content/programme.html" class="btn">View Programme</a>
                     </div>
                     
                     <div class="feature-card">
                         <h3>Participants</h3>
                         <!--<p>See who is coming to the conference.</p>-->
-                        <a href="https://christianetretter.github.io/STAMP/Content/Scientific/participants.html" class="btn">View Participants</a>
+                        <a href="/Content/Scientific/participants.html" class="btn">View Participants</a>
                     </div>
                     
                     <div class="feature-card">
                         <h3>Talks</h3>
                         <!--<p>Explore all the exciting talks.</p>-->
-                        <a href="https://christianetretter.github.io/STAMP/Content/Scientific/talks.html" class="btn">View Talks</a>
+                        <a href="/Content/Scientific/talks.html" class="btn">View Talks</a>
                     </div>
                 </div>
                 <h4 class="feature-title" style="color: var(--primary); text-align: left;">Local Organizing Committee</h4>
@@ -105,7 +105,7 @@
                 <!--<p>The scientific committee is responsible for the overall scientific content of the conference.</p>-->
                 <div class="committee-grid">
                     <div class="committee-card">
-                        <h6 class="committee-name">Ass. Prof. Dr. Sabine Boegli</h6>
+                        <h6 class="committee-name">Ass. Prof. Dr. Sabine Bögli</h6>
                         <p class="committee-role">Durham University, UK</p>
                     </div>
                     <div class="committee-card">
@@ -149,7 +149,7 @@
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/footer.html')
+        fetch('/Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();

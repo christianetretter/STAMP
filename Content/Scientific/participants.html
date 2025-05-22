@@ -3,7 +3,7 @@
 <head id="header-placeholder"></head>
 <meta charset="UTF-8">
 <script>
-    fetch('https://christianetretter.github.io/STAMP/Components/header.html')
+    fetch('/Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -16,7 +16,7 @@
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/hero.html')
+        fetch('/Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -29,7 +29,7 @@
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/navigation.html')
+        fetch('/Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -44,7 +44,8 @@
         <div class="container">
             <section class="welcome-section">
                 <h2 style="text-align: left; margin-top: -20px;">Participants</h2>
-                <p style="text-align: left;">See who is going to attend the conference.</p>
+                <!--<p style="text-align: left;">See who is going to attend the conference.</p>-->
+                <p></p>
             </section>
             <section class="participants-section">
                 <div class="participants-list">
@@ -57,7 +58,7 @@
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/footer.html')
+        fetch('/Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -66,7 +67,7 @@
                     document.getElementById('footer-placeholder').outerHTML = html;
         })
     </script>
-    <script src="https://christianetretter.github.io/STAMP/Content/Scripts/loadParticipants.js"></script>
+    <script src="/Content/Scripts/loadParticipants.js"></script>
 </body>
 </html>
 

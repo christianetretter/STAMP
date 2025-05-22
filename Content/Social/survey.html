@@ -2,7 +2,7 @@
 <html lang="en">
 <head id="header-placeholder"></head>
 <script>
-    fetch('https://christianetretter.github.io/STAMP/Components/header.html')
+    fetch('/Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -16,7 +16,7 @@
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/hero.html')
+        fetch('/Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -30,7 +30,7 @@
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/navigation.html')
+        fetch('/Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -58,11 +58,11 @@
                         <p class="survey-description">
                             Please click the button below to access our signup form. The form will ask you about your attendance at the social events and any dietary restrictions.
                         </p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDYM5lEYGja9RgPUehQ_i6GF1MeeQr5AiSj2ZUZQn7m5evAQ/viewform?usp=dialog" target="_blank" class="survey-link">Fill out the form</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDYM5lEYGja9RgPUehQ_i6GF1MeeQr5AiSj2ZUZQn7m5evAQ/viewform?usp=dialog" class="survey-link">Fill out the form</a>
                     </div>
                     <div class="survey-images">
-                        <img src="https://christianetretter.github.io/STAMP/Images/restaurant_rosengarten.jpg" alt="Restaurant Rosengarten">
-                        <img src="https://christianetretter.github.io/STAMP/Images/city-tour.jpg" alt="City Tour">
+                        <img src="/Images/restaurant_rosengarten.jpg" alt="Restaurant Rosengarten">
+                        <img src="/Images/city-tour.jpg" alt="City Tour">
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/footer.html')
+        fetch('/Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();

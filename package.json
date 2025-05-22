@@ -1,0 +1,14 @@
+{
+  "name": "stamp-website",
+  "version": "1.0.0",
+  "description": "STAMP Workshop Website",
+  "scripts": {
+    "start": "node start-dev-server.js",
+    "update-urls": "node updateUrls.js"
+  },
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+} 
