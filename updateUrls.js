@@ -1,21 +1,46 @@
 const fs = require('fs');
 const path = require('path');
 
-// Set this to '' for local development
-//const baseUrl = '';
-// Set this to your GitHub Pages URL for production
-const baseUrl = 'https://christianetretter.github.io/STAMP/';
+// Get the mode from command line argument
+const mode = process.argv[2] || 'local';
+
+// Set the base URL based on mode
+const baseUrl = mode === 'prod' 
+    ? 'https://christianetretter.github.io/STAMP/'
+    : '';
+
+console.log(`Running in ${mode} mode with baseUrl: ${baseUrl || '(empty)'}`);
 
 function updateFile(filePath) {
+    console.log(`Processing file: ${filePath}`);
     let content = fs.readFileSync(filePath, 'utf8');
     
-    // Replace relative paths with GitHub Pages URLs
-    content = content.replace(/(href|src)="\/(?!\/)/g, '$1="' + baseUrl);
+    if (mode === 'prod') {
+        // Replace relative paths with GitHub Pages URLs
+        content = content.replace(/(href|src)="\/(?!\/)/g, '$1="' + baseUrl);
+        // Update fetch calls for components with leading slash
+        content = content.replace(/fetch\('\/Components\//g, "fetch('" + baseUrl + 'Components/');
+        // Update fetch calls for components without leading slash
+        content = content.replace(/fetch\('Components\//g, "fetch('" + baseUrl + 'Components/');
+        // Update script src attributes
+        content = content.replace(/(src=")(?!http|https|\/\/)([^"]*\.js)/g, '$1' + baseUrl + '$2');
+        // Update href attributes
+        content = content.replace(/(href=")(?!http|https|\/\/)([^"]*\.html)/g, '$1' + baseUrl + '$2');
+        // Update relative paths in href/src without leading slash
+        content = content.replace(/(href|src)="(?!http|https|\/\/)([^"]*\.(?:html|css|js|pdf|png|jpg|jpeg|gif|svg))/g, '$1="' + baseUrl + '$2');
+    } else {
+        // Replace GitHub Pages URLs with relative paths
+        content = content.replace(new RegExp(baseUrl, 'g'), '');
+        // Update fetch calls back to relative paths
+        content = content.replace(/fetch\('https:\/\/christianetretter\.github\.io\/STAMP\/Components\//g, "fetch('Components/");
+    }
     
     fs.writeFileSync(filePath, content);
+    console.log(`Updated file: ${filePath}`);
 }
 
 function processDirectory(directory) {
+    console.log(`Scanning directory: ${directory}`);
     const files = fs.readdirSync(directory);
     
     files.forEach(file => {
@@ -24,11 +49,13 @@ function processDirectory(directory) {
         
         if (stat.isDirectory()) {
             processDirectory(filePath);
-        } else if (file.endsWith('.html') || file.endsWith('.css') || file.endsWith('.js')) {
+        } else if (file.endsWith('.html')) {
             updateFile(filePath);
         }
     });
 }
 
 // Start processing from the current directory
-processDirectory('.'); 
+console.log('Starting URL update process...');
+processDirectory('.');
+console.log('URL update process completed!'); 
