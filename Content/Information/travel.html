@@ -3,7 +3,7 @@
 <head id="header-placeholder"></head>
 <meta charset="UTF-8">
 <script>
-    fetch('https://christianetretter.github.io/STAMP/Components/header.html')
+    fetch('/Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -17,7 +17,7 @@
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/hero.html')
+        fetch('/Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/navigation.html')
+        fetch('/Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -54,8 +54,8 @@
                 <p>Arriving by train is probably the most convenient way to get to Bern. The train station is located in the city center, with the conference venue (Uni Bern) directly next to it. The main station is ideally connected to the rest of the city and also houses some supermarkets that are open late. From the main station the way to the conference venue is easily found, but check our <a href="../../../Content/Information/directions.html">directions page</a> for more details.</p>
                 <h4 class="feature-title" style="color: var(--primary); text-align: left; margin-top: var(--space-lg);">Getting around Bern</h4>
                 <p>Bern is a very walkable city, especially if you are staying in the city center. However, if you are staying a bit further out, or you want to visit the outskirts of the city, like the Gurten for example, you can use the Bern local public transport system. Trams and busses traverse the city with a high frequency. In order to use these you need to purchase a Libero ticket for Zones 100 and 101. These are available at the ticket machines at every station or online under <a href="https://www.libero-webshop.ch/home">this link</a>. They offer single tickets, day tickets and 6 trips tickets. Below is a map of Zones 100 and 101, so you may see where you can go with this ticket. Click the image to see it in full size.</p>
-                <a href="https://christianetretter.github.io/STAMP/Images/bern-zones.jpg" target="_blank">
-                    <img src="https://christianetretter.github.io/STAMP/Images/bern-zones.jpg" alt="Bern Zones" style="width: 50%; height: auto; margin-top: var(--space-lg);">
+                <a href="/Images/bern-zones.jpg" target="_blank">
+                    <img src="/Images/bern-zones.jpg" alt="Bern Zones" style="width: 50%; height: auto; margin-top: var(--space-lg);">
                 </a>
                 <p>If you still have questions, you can finde more information on the <a href="https://www.mylibero.ch/de">Libero website</a> or ask us directly.</p>
                 <p>Save travels!</p>
@@ -66,7 +66,7 @@
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('https://christianetretter.github.io/STAMP/Components/footer.html')
+        fetch('/Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
