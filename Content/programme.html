@@ -3,7 +3,7 @@
 <head id="header-placeholder"></head>
 <meta charset="UTF-8">
 <script>
-    fetch('/Components/header.html')
+    fetch('Components/header.html')
     .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.text();
@@ -17,7 +17,7 @@
     <!-- Hero Section -->
     <nav id="hero-placeholder"></nav>
     <script>
-        fetch('/Components/hero.html')
+        fetch('Components/hero.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav id="nav-placeholder"></nav>
     <script>
-        fetch('/Components/navigation.html')
+        fetch('Components/navigation.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();
@@ -47,7 +47,7 @@
     <div class="container">
         <section class="welcome-section">
             <h2 style="text-align: left; margin-top: -20px;">Conference Timetable</h2>
-            <p style="text-align: left;">Here you can find the <a href="/Downloads/programme.pdf">pdf version of the timetable</a> for download. All talks take place in the Building ExWi, Lecture Hall B7 (Floor -2), registration and all coffee breaks take place in ExWi Wandelhalle (Ground Floor, next to Main Entrance South), see the <a href="/Downloads/ExWi_Plan.pdf">map for finding ExWi</a> and the <a href="/Downloads/ExWi-room-plan.pdf">room plan of ExWi</a>. </p>
+            <p style="text-align: left;">Here you can find the <a href="https://christianetretter.github.io/STAMP/Downloads/programme.pdf">pdf version of the timetable</a> for download. All talks take place in the Building ExWi, Lecture Hall B7 (Floor -2), registration and all coffee breaks take place in ExWi Wandelhalle (Ground Floor, next to Main Entrance South), see the <a href="https://christianetretter.github.io/STAMP/Downloads/ExWi_Plan.pdf">map for finding ExWi</a> and the <a href="https://christianetretter.github.io/STAMP/Downloads/ExWi-room-plan.pdf">room plan of ExWi</a>. </p>
         </section>
 
         <div class="timetable-grid">
@@ -318,7 +318,7 @@
     <!-- Footer -->
     <footer id="footer-placeholder"></footer>
     <script>
-        fetch('/Components/footer.html')
+        fetch('Components/footer.html')
         .then(response => {
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.text();

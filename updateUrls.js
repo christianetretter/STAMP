@@ -1,13 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
-const baseUrl = '';
+// Set this to '' for local development
+//const baseUrl = '';
+// Set this to your GitHub Pages URL for production
+const baseUrl = 'https://christianetretter.github.io/STAMP/';
 
 function updateFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     
-    // Replace absolute URLs with relative paths
-    content = content.replace(new RegExp(baseUrl, 'g'), '');
+    // Replace relative paths with GitHub Pages URLs
+    content = content.replace(/(href|src)="\/(?!\/)/g, '$1="' + baseUrl);
     
     fs.writeFileSync(filePath, content);
 }
