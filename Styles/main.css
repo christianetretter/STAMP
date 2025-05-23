@@ -135,7 +135,7 @@ body {
     position: relative;
     background: url('https://christianetretter.github.io/STAMP/Images/Bern.jpg') center/cover no-repeat;
     color: white;
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg) 0;
     overflow: hidden;
     min-height: 500px;
 }
@@ -196,19 +196,30 @@ body {
 
 .title-line:first-child {
     color: var(--accent);
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
+    font-size: 0.8em;
 }
 
 .title-line:last-child {
     color: white;
     opacity: 0.95;
-    font-size: 0.9em;
+    font-size: 0.65em;
 }
 
 .conference-details {
-    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-left: auto;
+    margin-right: 55%;
+    max-width: 100%;
+    text-align: right;
+    margin-top: var(--space-lg);
+    white-space: nowrap;  /* Prevent line breaks */
+}
+
+.conference-details p {
+    margin: 0.5em 0;  /* Reduced from default margin to create smaller spacing between lines */
 }
 
 /* Navigation */
@@ -271,20 +282,24 @@ body {
 .nav-list a,
 .dropdown-trigger {
     display: block;
-    padding: var(--space-sm) var(--space-xl);
+    padding: var(--space-sm) var(--space-md);
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
     white-space: nowrap;
     font-family: 'Roboto Slab', serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .nav-list a:hover,
-.nav-list a.active,
 .dropdown-trigger:hover {
     color: var(--primary);
+}
+
+.nav-list a.active {
+    color: var(--primary);
+    font-weight: 600;
 }
 
 /* Dropdown */
@@ -322,10 +337,11 @@ body {
 
 .dropdown-menu a {
     padding: var(--space-xs) var(--space-md);
-    font-size: 0.9rem;
+    font-size: 1rem;  /* Increased from 0.9rem */
     font-family: 'Roboto Slab', serif;
-    display: block; /* Added to make the entire area clickable */
-    background: white; /* Added to ensure the background is solid */
+    display: block;
+    background: white;
+    margin: 2px 0;  /* Added small margin between items */
 }
 
 .dropdown-menu a:hover {
@@ -553,6 +569,28 @@ body {
     color: white;
 }
 
+/* Mobile Feature Cards */
+@media screen and (max-width: 800px) {
+    .feature-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-md);
+    }
+
+    .feature-card {
+        padding: var(--space-md);
+        min-height: 120px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
+
 /* Timetable Container */
 .timetable-grid {
     display: grid;
@@ -709,15 +747,15 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--space-xl);
-    padding-left: var(--space-lg);
+    gap: var(--space-md);
+    padding-left: var(--space-sm);
     position: relative;
 }
 
 .footer-logos::before {
     content: '';
     position: absolute;
-    left: -60px;
+    left: -30px;
     top: 0;
     bottom: 0;
     width: 1px;
@@ -726,10 +764,91 @@ body {
 }
 
 .footer-logo {
-    height: 80px;
+    height: 60px;
     width: auto;
     opacity: 0.7;
     transition: opacity 0.2s ease;
+}
+
+/* Mobile Footer Styles */
+@media screen and (max-width: 800px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-xs);
+        padding: 0 var(--space-xs);
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .footer-sections-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: var(--space-md);
+        width: 75%;
+        flex-wrap: wrap;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 150px;
+        padding: var(--space-xs) 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-section:nth-child(3) {
+        border-top: none;
+        padding-top: var(--space-xs);
+    }
+
+    .footer-section h4 {
+        font-size: 0.9rem;
+        margin-bottom: var(--space-xs);
+    }
+
+    .footer-section ul {
+        width: 100%;
+        text-align: left;
+        flex: 1;
+    }
+
+    .footer-section ul li {
+        margin-bottom: var(--space-xs);
+    }
+
+    .footer-section a {
+        font-size: 0.7rem;
+    }
+
+    .footer-logos {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-xs);
+        padding: -15% 0;
+        width: 25%;
+        border-top: none;
+        border-left: 1px solid color-mix(in srgb, var(--primary) 50%, transparent);
+    }
+
+    .footer-logos::before {
+        display: none;
+    }
+
+    .footer-logo {
+        height: 40px;
+        width: auto;
+        margin: 0;
+        transition: transform 0.2s ease;
+    }
+
+    .footer-logo:hover {
+        transform: scale(1.05);
+    }
 }
 
 
@@ -832,8 +951,8 @@ th,td{
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
-  font-size: 0.8em;
+  padding: 8px 16px;  /* Reduced from 12px 16px */
+  font-size: 1rem;  /* Increased from 0.8em */
   text-decoration: none;
   display: block;
 }
@@ -874,7 +993,7 @@ th,td{
     line-height: 1;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 30px;
     font-size: 0.85em;
 }
 
@@ -892,13 +1011,13 @@ th,td{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-width: 100px;
+    min-width: 140px;
 }
 
 .participant-affiliation {
     color: var(--text-secondary);
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 80px;  /* Increased from 80px */
     font-size: 0.85em;
     white-space: nowrap;
     overflow: hidden;
@@ -1022,7 +1141,7 @@ th,td{
 .download-info {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-xl);
+    gap: var(--space-xl);  /* Increased from var(--space-xl) */
     flex: 1;
     padding-right: var(--space-md);
 }
@@ -1033,7 +1152,7 @@ th,td{
     font-size: 1.2em;
     margin: 0;
     font-weight: 600;
-    min-width: 250px; /* Increased width for title */
+    min-width: 280px;  /* Increased from 250px */
 }
 
 .download-description {
@@ -1041,6 +1160,7 @@ th,td{
     font-size: 0.9em;
     padding-top: 2px;
     flex: 1;
+    margin-left: var(--space-sm);  /* Added margin to create more space */
 }
 
 .download-icon {
@@ -1285,4 +1405,89 @@ th,td{
     margin-top: 0;
     padding-top: 0;
     top: 6.4em; /* Adjusted position for second role */
+}
+
+/* Mobile Committee Cards */
+@media screen and (max-width: 800px) {
+    .committee-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: var(--space-sm);
+        justify-content: center;
+        display: grid;
+        grid-auto-rows: 1fr;
+    }
+
+    .committee-card {
+        min-height: 120px; /* Increased for more bottom padding */
+        padding: var(--space-xs) var(--space-sm);
+        height: 100%;
+        position: relative;
+    }
+
+    .committee-name {
+        font-size: 0.75em;
+        height: auto;
+        min-height: 2.8em;
+        max-height: 4.2em;
+        -webkit-line-clamp: 3;
+        line-height: 1.4;
+        margin-bottom: var(--space-xs);
+    }
+
+    .committee-role {
+        font-size: 0.7em;
+        position: absolute;
+        top: 4em;
+        left: var(--space-sm);
+        right: var(--space-xs);
+        padding: 2px 0; /* Minimal padding */
+    }
+
+    .committee-role + .committee-role {
+        top: 6em;
+        padding-top: 0;
+    }
+}
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 800px) {
+    .nav-list a,
+    .dropdown-trigger {
+        padding: var(--space-sm) var(--space-sm);  /* Reduced padding for mobile */
+        font-size: 1rem;  /* Reduced font size for mobile */
+    }
+
+    .nav-container {
+        padding: 0 var(--space-xs);  /* Reduced container padding for mobile */
+    }
+
+    .dropdown-menu a {
+        padding: 4px var(--space-sm);  /* Reduced padding for mobile dropdown items */
+        font-size: 0.95rem;  /* Slightly smaller font for mobile dropdown */
+        margin: 1px 0;  /* Reduced margin between items */
+    }
+
+    .dropdown-content a {
+        padding: 4px 12px;  /* Reduced padding for mobile dropdown items */
+        font-size: 0.95rem;  /* Slightly smaller font for mobile dropdown */
+    }
+}
+
+/* Mobile Participant Cards */
+@media screen and (max-width: 800px) {
+    .participant-card {
+        padding: 2px 4px;
+        gap: 20px;  /* Reduced gap for mobile */
+    }
+
+    .participant-card h5 {
+        min-width: 120px;  /* Reduced min-width for mobile */
+        max-width: 120px;  /* Added max-width to ensure consistent width */
+    }
+
+    .participant-affiliation {
+        padding-left: 80px;  /* Reduced padding for mobile */
+        min-width: 0;  /* Allow shrinking */
+        flex: 1;
+    }
 }
