@@ -10,15 +10,33 @@ MathJax = {
         displayMath: [['$$', '$$'], ['\\[', '\\]']],
         processEscapes: true,
         processEnvironments: true,
-        packages: ['base', 'ams', 'noerrors', 'noundefined'],
+        packages: [
+            'base', 
+            'ams', 
+            'noerrors', 
+            'noundefined', 
+            'amsmath', 
+            'bm',
+            'textcomp',
+            'textgreek',
+            'textcase',
+            'textpos',
+            'textfit',
+            'textmerg'
+        ],
+        linebreaks: { 
+            automatic: true,
+            width: "container"
+        },
         macros: {
             // Text formatting
-            textbf: ['$\\mathbf{#1}$', 1],
-            textit: ['$\\mathit{#1}$', 1],
-            textrm: ['$\\mathrm{#1}$', 1],
-            textsf: ['$\\mathsf{#1}$', 1],
-            texttt: ['$\\mathtt{#1}$', 1],
-            textnormal: ['$\\mathrm{#1}$', 1],
+            textbf: ['\\bm{#1}', 1],
+            textit: ['\\mathit{#1}', 1],
+            textrm: ['\\mathrm{#1}', 1],
+            rm: ['\\mathrm{#1}', 1],
+            textsf: ['\\mathsf{#1}', 1],
+            texttt: ['\\mathtt{#1}', 1],
+            textnormal: ['\\mathrm{#1}', 1],
             // Special characters
             'u{i}': '\\u{\\i}',
             'u{o}': '\\u{o}',
@@ -112,12 +130,23 @@ MathJax = {
             '\\"{b}': '\\ddot{b}',
             '\\"{B}': '\\ddot{B}',
             '\\"{f}': '\\ddot{f}',
-            '\\"{F}': '\\ddot{F}'
+            '\\"{F}': '\\ddot{F}',
+            'newline': '\\\\',
+            'br': '\\\\'
         }
     },
     options: {
         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        processHtmlClass: 'math-tex'
+        processHtmlClass: 'math-tex',
+        enableMenu: false
+    },
+    startup: {
+        ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+                console.log('MathJax is loaded and ready');
+            });
+        }
     }
 };
 </script>
@@ -163,7 +192,6 @@ MathJax = {
     <main class="main-content">
         <div class="container">
             <section class="welcome-section">
-                <h1>This site is still experiencing some issues with rendering correctly. If you can't properly see the talks, please check back soon!</h1>
                 <h2 style="text-align: left; margin-top: -20px;">Talks</h2>
                 <p style="text-align: left;">Listed below are all the talks given at the conference. Click the dropdown menu to view the abstract of the talk or download the book of abstracts <a href="https://christianetretter.github.io/STAMP/Downloads/abstracts.pdf">here</a>.</p>
             </section>
