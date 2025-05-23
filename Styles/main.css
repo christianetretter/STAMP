@@ -375,8 +375,8 @@ body {
 .talks-container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
-    margin: var(--space-md) 0;
+    gap: var(--space-sm);
+    margin: var(--space-sm) 0;
     width: 100%;
 }
 
@@ -384,7 +384,7 @@ body {
     background: white;
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
-    padding: var(--space-md);
+    padding: var(--space-sm);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -394,7 +394,7 @@ body {
 }
 
 .talk-header {
-    padding: var(--space-md);
+    padding: var(--space-sm);
     background: var(--background-alt);
     cursor: pointer;
     display: flex;
@@ -436,7 +436,8 @@ body {
     align-items: center;
     color: var(--text-secondary);
     font-size: 0.9em;
-    max-width: 50%; /* Nur die Meta-Informationen sind auf 50% begrenzt */
+    max-width: 80%; /* Increased from 50% to 70% to prevent line breaks */
+    gap: var(--space-md); /* Added gap between author and time */
 }
 
 .talk-author {
@@ -455,7 +456,7 @@ body {
 }
 
 .talk-abstract {
-    padding: 0 var(--space-md);
+    padding: 0 var(--space-sm);
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -463,13 +464,14 @@ body {
 }
 
 .talk-abstract.active {
-    padding: var(--space-md);
+    padding: var(--space-sm);
     max-height: none;
 }
 
 .talk-abstract p {
     margin: 0;
     line-height: 1.6;
+    white-space: pre-wrap; /* This preserves line breaks */
 }
 
 /* Ensure MathJax elements don't overflow */
@@ -477,12 +479,14 @@ body {
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
+    white-space: pre-wrap; /* This preserves line breaks in LaTeX */
 }
 
 .talk-abstract .MathJax_Display {
     margin: 1em 0;
     overflow-x: auto;
     overflow-y: hidden;
+    white-space: pre-wrap; /* This preserves line breaks in LaTeX */
 }
 
 .talk-header.active .toggle-icon {
@@ -647,8 +651,7 @@ body {
 .main-footer {
     background: #f0f4f8;
     color: var(--text-primary);
-    padding: var(--space-md) 0;
-    font-size: 0.85rem;
+    padding: var(--space-lg) 0;
     margin-top: auto;
 }
 
@@ -656,33 +659,40 @@ body {
     max-width: 95%;
     width: 1800px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr) auto;
-    gap: var(--space-xl);
     padding: 0 var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.footer-sections {
+    display: flex;
+    gap: var(--space-xl);
+    flex: 1;
 }
 
 .footer-section {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: var(--space-xs);
 }
 
 .footer-section h4 {
     color: #1a237e;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: var(--space-xs);
     font-weight: 500;
-    opacity: 1;
+    height: 24px;
+    display: flex;
+    align-items: center;
 }
 
 .footer-section ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left;
-    flex-grow: 1;
+    margin-top: var(--space-xs);
 }
 
 .footer-section ul li {
@@ -694,38 +704,82 @@ body {
     color: #666;
     text-decoration: none;
     transition: color 0.2s ease;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .footer-section a:hover {
     color: #000;
 }
 
-.footer-logos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-xl);
-    padding-left: var(--space-lg);
-    position: relative;
+.footer-divider {
+    width: 2px;
+    height: 100px;
+    background: #52739e;
+    opacity: 0.3;
+    margin: 0 var(--space-lg);
 }
 
-.footer-logos::before {
-    content: '';
-    position: absolute;
-    left: -60px;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: #52739e;
-    opacity: 1;
+.footer-logos {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: center;
+    height: 100px;
 }
 
 .footer-logo {
-    height: 80px;
+    height: 70px;
     width: auto;
     opacity: 0.7;
     transition: opacity 0.2s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+/* Mobile Footer Styles */
+@media screen and (max-width: 800px) {
+    .footer-content {
+        padding: 0 var(--space-md);
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .footer-sections {
+        flex-direction: row;
+        gap: var(--space-md);
+    }
+
+    .footer-section {
+        padding: 0;
+    }
+
+    .footer-section h4 {
+        font-size: 1rem;
+        height: 22px;
+    }
+
+    .footer-section a {
+        font-size: 0.85rem;
+    }
+
+    .footer-divider {
+        width: 2px;
+        height: 100px;
+        margin: 0 var(--space-md);
+    }
+
+    .footer-logos {
+        flex-direction: column;
+        gap: var(--space-lg);
+        height: 100px;
+        justify-content: center;
+    }
+
+    .footer-logo {
+        height: 60px;
+    }
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Slab');
@@ -1275,5 +1329,3 @@ th,td{
     padding-top: 0;
     top: 6.4em; /* Adjusted position for second role */
 }
-
-
