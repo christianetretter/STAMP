@@ -692,7 +692,8 @@ body {
 .main-footer {
     background: #f0f4f8;
     color: var(--text-primary);
-    padding: var(--space-lg) 0;
+    padding: var(--space-md) 0;
+    font-size: 0.85rem;
     margin-top: auto;
 }
 
@@ -700,40 +701,33 @@ body {
     max-width: 95%;
     width: 1800px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: var(--space-xl);
     padding: 0 var(--space-lg);
-    display: flex;
-    align-items: center;
-    gap: var(--space-xl);
-}
-
-.footer-sections {
-    display: flex;
-    gap: var(--space-xl);
-    flex: 1;
 }
 
 .footer-section {
-    flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: var(--space-xs);
 }
 
 .footer-section h4 {
     color: #1a237e;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: var(--space-xs);
     font-weight: 500;
-    height: 24px;
-    display: flex;
-    align-items: center;
+    opacity: 1;
 }
 
 .footer-section ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-top: var(--space-xs);
+    text-align: left;
+    flex-grow: 1;
 }
 
 .footer-section ul li {
@@ -745,86 +739,38 @@ body {
     color: #666;
     text-decoration: none;
     transition: color 0.2s ease;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    font-size: 0.85rem;
 }
 
 .footer-section a:hover {
     color: #000;
 }
 
-.footer-divider {
-    width: 2px;
-    height: 100px;
-    background: #52739e;
-    opacity: 0.3;
-    margin: 0 var(--space-lg);
-}
-
 .footer-logos {
     display: flex;
-    gap: var(--space-xl);
+    flex-direction: row;
     align-items: center;
-    height: 100px;
+    gap: var(--space-xl);
+    padding-left: var(--space-lg);
+    position: relative;
 }
 
-.footer-logo {
-    height: 70px;
-    width: auto;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-}
-
-.footer-logo:hover {
+.footer-logos::before {
+    content: '';
+    position: absolute;
+    left: -60px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #52739e;
     opacity: 1;
 }
 
-/* Mobile Footer Styles */
-@media screen and (max-width: 800px) {
-    .footer-content {
-        padding: 0 var(--space-md);
-        flex-direction: column;
-        gap: var(--space-md);
-    }
-
-    .footer-sections {
-        flex-direction: row;
-        gap: var(--space-md);
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .footer-section {
-        padding: 0;
-        flex: 1;
-    }
-
-    .footer-section h4 {
-        font-size: 1rem;
-        height: 22px;
-    }
-
-    .footer-section a {
-        font-size: 0.85rem;
-    }
-
-    .footer-divider {
-        width: 2px;
-        height: 100px;
-        margin: 0 var(--space-md);
-    }
-
-    .footer-logos {
-        flex-direction: row;
-        gap: var(--space-lg);
-        height: 100px;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .footer-logo {
-        height: 60px;
-    }
+.footer-logo {
+    height: 80px;
+    width: auto;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Slab');
