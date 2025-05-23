@@ -25,10 +25,9 @@
             <li class="dropdown">
                 <button class="dropdown-trigger">Practical Information</button>
                 <ul class="dropdown-menu">
-                    <li><a href="https://christianetretter.github.io/STAMP/Content/Information/directions.html">Directions</a></li>
-                    <li><a href="https://christianetretter.github.io/STAMP/Content/Information/general.html">About Bern</a></li>
-                    <li><a href="https://christianetretter.github.io/STAMP/Content/Information/restaurants.html">Restaurants</a></li>
-                    <li><a href="https://christianetretter.github.io/STAMP/Content/Information/travel.html">Travel</a></li>
+                        <li><a href="https://christianetretter.github.io/STAMP/Content/Information/directions.html">Directions</a></li> 
+                        <li><a href="https://christianetretter.github.io/STAMP/Content/Information/general.html">About Bern</a></li>
+                        <li><a href="https://christianetretter.github.io/STAMP/Content/Information/restaurants.html">Restaurants</a
                 </ul>
             </li>
             <li><a href="https://christianetretter.github.io/STAMP/Content/downloads.html">Downloads</a></li>
@@ -38,15 +37,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navList = document.querySelector('.nav-list');
         const dropdowns = document.querySelectorAll('.dropdown');
-
-        // Toggle main menu
-        menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('active');
-            navList.classList.toggle('active');
-        });
 
         // Handle dropdowns
         dropdowns.forEach(dropdown => {
@@ -57,14 +48,6 @@
                 e.preventDefault();
                 menu.classList.toggle('active');
             });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.main-nav')) {
-                menuToggle.classList.remove('active');
-                navList.classList.remove('active');
-            }
         });
     });
 </script>
