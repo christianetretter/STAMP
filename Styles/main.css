@@ -87,48 +87,7 @@ body {
     }
     
     .footer-content {
-        padding: 0 var(--space-md);
-        flex-direction: column;
-        gap: var(--space-md);
-    }
-    
-    .footer-sections {
-        flex-direction: row;
-        gap: var(--space-md);
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    .footer-section {
-        padding: 0;
-        flex: 1;
-    }
-    
-    .footer-section h4 {
-        font-size: 1rem;
-        height: 22px;
-    }
-    
-    .footer-section a {
-        font-size: 0.85rem;
-    }
-    
-    .footer-divider {
-        width: 2px;
-        height: 100px;
-        margin: 0 var(--space-md);
-    }
-    
-    .footer-logos {
-        flex-direction: row;
-        gap: var(--space-lg);
-        height: 100px;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .footer-logo {
-        height: 60px;
+        width: 166.67%; /* 100% / 0.6 to compensate for the zoom */
     }
     
     .container {
@@ -773,6 +732,7 @@ body {
     transition: opacity 0.2s ease;
 }
 
+
 @import url('https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Slab');
 
 *{
@@ -1061,8 +1021,10 @@ th,td{
 
 .download-info {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     gap: var(--space-xl);
+    flex: 1;
+    padding-right: var(--space-md);
 }
 
 .download-info h3 {
@@ -1071,12 +1033,14 @@ th,td{
     font-size: 1.2em;
     margin: 0;
     font-weight: 600;
+    min-width: 250px; /* Increased width for title */
 }
 
 .download-description {
     color: var(--text-secondary);
     font-size: 0.9em;
     padding-top: 2px;
+    flex: 1;
 }
 
 .download-icon {
@@ -1088,6 +1052,7 @@ th,td{
     padding: 2px;
     border-radius: 2px;
     object-fit: contain;
+    margin-left: var(--space-md);
 }
 
 .download-link {
@@ -1097,6 +1062,7 @@ th,td{
     border-radius: 4px;
     transition: background-color 0.3s ease;
     line-height: 0;
+    margin-left: var(--space-md);
 }
 
 .download-link:hover {
